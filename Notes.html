@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="Notes.css" />
+    <meta charset="UTF-8" />
+    <title>JavaScript Crash Course</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+        background-color: #2196f3;
+      }
+      .container {
+        margin-bottom: 40px;
+      }
+      .row {
+        margin-bottom: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 30px;
+        margin-top: 40px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+      }
+      h3 {
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      p {
+        color: mintcream;
+        margin: 10px 0;
+      }
+      ul {
+        list-style-type: disc;
+        margin-left: 40px;
+      }
+      .code-example {
+        background-color: black;
+        color: white;
+        padding: 15px;
+        border-left: 5px solid rgb(90, 230, 90);
+        font-family: monospace;
+        overflow-x: auto;
+      }
+      .code-example pre {
+        margin: 0;
+      }
+      .note {
+        background-color: #e7f4ff;
+        padding: 10px;
+        border-left: 5px solid red;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>JavaScript Crash Course</h1>
+      </div>
+
+      <div class="row">
+        <h2>1. Data Types & Variables</h2>
+
+        <p>
+          <strong>Data Types</strong> help us organize data in JavaScript. Here
+          are some examples:
+        </p>
+
+        <h3>A. String</h3>
+        <p>Strings are sequences of characters used to represent text.</p>
+        <ul>
+          <li><code>"Hello World"</code></li>
+          <li><code>`Frontend Simplified is amazing`</code></li>
+          <li><code>'100+'</code></li>
+        </ul>
+
+        <div class="code-example">
+          <pre>
+// Coding Example:
+let str = 'Casey';
+console.log(str[5 - 1]); // Outputs: 'y'</pre
+          >
+        </div>
+
+        <h3>B. Number</h3>
+        <p>Numbers represent numeric values.</p>
+        <ul>
+          <li>
+            Arithmetic operations: <code>*</code> (multiplication),
+            <code>/</code> (division)
+          </li>
+          <li>Example: <code>7 * (4 + 9) = 91</code></li>
+          <li>
+            Modulus operator: <code>%</code> (e.g., <code>15 % 2</code> to
+            determine if a number is even or odd)
+          </li>
+        </ul>
+
+        <h3>C. Boolean</h3>
+        <p>
+          Booleans represent logical entities and can have two values:
+          <code>true</code> or <code>false</code>.
+        </p>
+
+        <h3>D. Undefined</h3>
+        <p>
+          A variable that has been declared but not assigned a value is
+          <code>undefined</code>.
+        </p>
+
+        <h3>E. Null</h3>
+        <p>
+          <code>null</code> is an assignment value that represents no value.
+        </p>
+
+        <h3>F. NaN</h3>
+        <p>
+          <code>NaN</code> stands for "Not-a-Number" and indicates an invalid
+          number.
+        </p>
+        <div class="note">
+          <p class="note-para">
+            <strong>Note:</strong> Getting <code>NaN</code> typically indicates
+            a problem in your code where you're performing a numeric operation
+            on non-numeric data.
+          </p>
+        </div>
+
+        <h3>G. Variables</h3>
+        <p>
+          Variables store data values. There are three ways to declare
+          variables:
+        </p>
+        <ul>
+          <li><code>var</code> - Outdated and not recommended.</li>
+          <li><code>let</code> - Can be reassigned; block-scoped.</li>
+          <li>
+            <code>const</code> - Constant; cannot be reassigned; block-scoped.
+          </li>
+        </ul>
+
+        <div class="code-example">
+          <pre>
+// Variable Examples:
+let fullName = 'Casey Sexton';
+
+let celsius = 10;
+let fahrenheit = celsius * 1.8 + 32;
+console.log(fahrenheit); // Outputs: 50</pre
+          >
+        </div>
+
+        <h3>H. Equality</h3>
+        <p>Comparison operators are used to compare values:</p>
+        <ul>
+          <li><code>==</code> - Equal to (compares values).</li>
+          <li>
+            <code>===</code> - Strict equal to (compares values and types).
+          </li>
+          <li><code>!=</code> - Not equal to.</li>
+          <li><code>!==</code> - Strict not equal to.</li>
+          <li><code>&gt;</code> - Greater than.</li>
+          <li><code>&lt;</code> - Less than.</li>
+          <li><code>&gt;=</code> - Greater than or equal to.</li>
+          <li><code>&lt;=</code> - Less than or equal to.</li>
+        </ul>
+
+        <div class="code-example">
+          <pre>
+// Equality Code Example:
+let subscribed = false;
+let loggedIn = true;
+
+if (subscribed === true) {
+    console.log("Show the video");
+} else if (loggedIn === true) {
+    console.log("Tell user to upgrade their subscription");
+} else {
+    console.log("Tell user to subscribe");
+}</pre
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>2. Loops</h2>
+        <p>Loops are used to execute a block of code repeatedly.</p>
+
+        <h3>A. For Loop</h3>
+        <p>The <code>for</code> loop has the following syntax:</p>
+        <div class="code-example">
+          <pre>
+for (initialization; condition; increment) {
+    // code block to be executed
+}</pre
+          >
+        </div>
+        <p>Example:</p>
+        <div class="code-example">
+          <pre>
+for (let i = 0; i &lt;= 99; i++) {
+    console.log(i);
+}</pre
+          >
+        </div>
+
+        <h3>B. While Loop</h3>
+        <p>
+          The <code>while</code> loop repeats a block of code as long as a
+          specified condition is true.
+        </p>
+
+        <h3>C. Do While Loop</h3>
+        <p>
+          The <code>do...while</code> loop is similar to the
+          <code>while</code> loop, but it executes the code block at least once
+          before checking the condition.
+        </p>
+
+        <h3>D. Looping Through a String</h3>
+        <p>Print out each character in a string:</p>
+        <div class="code-example">
+          <pre>
+const str = "Frontend Simplified";
+
+for (let i = 0; i &lt; str.length; i++) {
+    console.log(str[i]);
+}</pre
+          >
+        </div>
+
+        <h3>E. The Big Interview Question</h3>
+        <p>FizzBuzz implementation:</p>
+        <div class="code-example">
+          <pre>
+for (let i = 1; i &lt;= 20; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log(`${i} -&gt; Frontend Simplified`);
+    } else if (i % 3 === 0) {
+        console.log(`${i} -&gt; Frontend`);
+    } else if (i % 5 === 0) {
+        console.log(`${i} -&gt; Simplified`);
+    } else {
+        console.log(`${i} -&gt; ${i}`);
+    }
+}</pre
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>3. Functions</h2>
+        <p>
+          A function is a block of code designed to perform a particular task.
+        </p>
+
+        <h3>A. Function Definition and Invocation</h3>
+        <div class="code-example">
+          <pre>
+// Function definition
+function welcomePersonToFES(firstName, lastName) {
+    console.log(`Welcome to Frontend Simplified, ${firstName} ${lastName}`);
+}
+
+// Function invocation
+welcomePersonToFES('David', 'Brag');
+welcomePersonToFES('Zen', 'Doe');
+welcomePersonToFES('Paul', 'Bunuon');</pre
+          >
+        </div>
+        <p>
+          <strong>Note:</strong> Arguments must match the parameters in both
+          order and quantity.
+        </p>
+
+        <h3>B. Returning Values from Functions</h3>
+        <p>Example of using a value returned by a function:</p>
+        <div class="code-example">
+          <pre>
+function convertCelsiusToFahrenheit(celsius) {
+    return celsius * 1.8 + 32;
+}
+
+console.log(convertCelsiusToFahrenheit(0));  // Outputs: 32
+console.log(convertCelsiusToFahrenheit(10)); // Outputs: 50
+console.log(convertCelsiusToFahrenheit(30)); // Outputs: 86</pre
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>4. Arrays</h2>
+        <p>
+          Arrays are data structures that can hold multiple values in one
+          variable.
+        </p>
+
+        <h3>A. Array Initialization</h3>
+        <div class="code-example">
+          <pre>
+let arr = [20, 30, 40, 50, 100];
+console.log(arr[0]);                // Outputs: 20
+console.log(arr[arr.length - 1]);   // Outputs: 100
+
+arr.push(200);
+console.log(arr);                   // Outputs: [20, 30, 40, 50, 100, 200]</pre
+          >
+        </div>
+
+        <h3>B. Filtering Arrays</h3>
+        <div class="code-example">
+          <pre>
+// Using filter method
+let newArr = arr.filter(element =&gt; element &lt; 50);
+console.log(newArr); // Outputs: [20, 30, 40]</pre
+          >
+        </div>
+
+        <h3>C. Mapping Arrays</h3>
+        <div class="code-example">
+          <pre>
+// Using map method
+let newArray = arr.map(element =&gt; element * 100);
+console.log(newArray); // Outputs: [2000, 3000, 4000, 5000, 10000, 20000]</pre
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>5. Objects</h2>
+        <p>Objects are used to store multiple properties in one variable.</p>
+
+        <h3>A. Object Initialization</h3>
+        <div class="code-example">
+          <pre>
+let users = [
+  {
+    username: 'Casey',
+    email: 'c.blaine.sexton@gmail.com',
+    password: 'Bizzle',
+    subscription: 'VIP',
+    lessonCompleted: [0, 1],
+  },
+  {
+    username: 'Dude',
+    email: 'c.blaine.s@gmail.com',
+    password: 'Buggy',
+    subscription: 'VIP',
+    lessonCompleted: [0, 1],
+  },
+];</pre
+          >
+        </div>
+
+        <h3>B. Accessing Object Properties</h3>
+        <div class="code-example">
+          <pre>
+// Function to log in a user
+function login(email, password) {
+  for (let i = 0; i &lt; users.length; i++) {
+    if (users[i].email === email) {
+      if (users[i].password === password) {
+        console.log('Log the user in - the details are correct');
+      } else {
+        console.log('Incorrect password');
+      }
+      return;
+    }
+  }
+  console.log('The user could not be found');
+}
+
+login('c.blaine.sexton@gmail.com', 'Bizzle');</pre
+          >
+        </div>
+
+        <h3>C. Adding Objects to an Array</h3>
+        <div class="code-example">
+          <pre>
+// Function to register a new user
+function register(user) {
+  users.push(user);
+}
+
+register({
+  username: 'Casey',
+  email: 'c.blaine@gmail.com',
+  password: 'Bizzy',
+  subscription: 'VIP',
+  discordId: 'C@discord.com',
+  lessonCompleted: [0, 1, 2],
+});
+
+console.log(users);</pre
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>6. DOM (Document Object Model)</h2>
+        <p>
+          The DOM allows you to access and change the styling and content of
+          elements on your website.
+        </p>
+
+        <h3>A. Accessing DOM Elements</h3>
+        <p>First way (most used):</p>
+        <div class="code-example">
+          <pre>
+document.querySelector('#title'); // Using ID
+document.querySelector('.title'); // Using class
+document.querySelector('h1');     // Using tag</pre
+          >
+        </div>
+
+        <p>Second way:</p>
+        <div class="code-example">
+          <pre>document.getElementById('title');</pre>
+        </div>
+
+        <h3>B. Modifying DOM Elements</h3>
+        <div class="code-example">
+          <pre>
+// Changing inner HTML
+document.querySelector('#title').innerHTML = 'Frontend Simplified';
+
+// Appending to inner HTML
+document.querySelector('#title').innerHTML += ' is amazing!';</pre
+          >
+        </div>
+
+        <h3>C. Changing CSS Styles</h3>
+        <div class="code-example">
+          <pre>document.querySelector('.title').style.color = 'blue';</pre>
+        </div>
+
+        <h3>D. Example: Changing Elements Using JavaScript</h3>
+        <p><strong>HTML:</strong></p>
+        <div class="code-example">
+          <pre>
+&lt;button onclick="changeTitleToRed()"&gt;Click Me&lt;/button&gt;
+&lt;button onclick="turnToBlack()"&gt;Turn To Black&lt;/button&gt;</pre
+          >
+        </div>
+
+        <p><strong>CSS:</strong></p>
+        <div class="code-example">
+          <pre>
+* {
+    transition: 300ms ease;
+}
+
+.dark-theme {
+    background-color: black;
+}
+
+.dark-theme * {
+    color: white;
+}
+
+.turn-red {
+    color: red;
+}</pre
+          >
+        </div>
+
+        <p><strong>JavaScript:</strong></p>
+        <div class="code-example">
+          <pre>
+function changeTitleToRed() {
+  document.querySelector('.title').classList.toggle('turn-red');
+}
+
+function turnToBlack() {
+  document.querySelector('body').classList.toggle('dark-theme');
+}</pre
+          >
+        </div>
+
+        <p>
+          <strong>Note:</strong> Ensure your JavaScript file is loaded after the
+          HTML content by adding <code>defer</code> to the script tag:
+        </p>
+        <div class="code-example">
+          <pre>&lt;script src="app.js" defer&gt;&lt;/script&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
